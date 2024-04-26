@@ -22,7 +22,7 @@
       "@utilities/*": ["src/utilities/*"],
       "@assets/*": ["src/assets/*"],
       "@hooks/*": ["src/hooks/*"],
-      "@components/*": ["src/components/*"],
+      "@components/*": ["src/components/*"]
     }
   },
   "include": ["src"],
