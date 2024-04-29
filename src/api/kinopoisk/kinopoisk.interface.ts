@@ -1,5 +1,5 @@
 import type { IFetchOptions } from '@/types/api.interface';
-import type { IMovie } from '@/types/movie.interface';
+import type { IDocs, IMovie } from '@/types/movie.interface';
 
 interface IKinopoiskConfig {
   protocol: string;
@@ -10,6 +10,7 @@ interface IKinopoiskConfig {
 
 interface IKinopoiskService {
   getMovie(fetchOptions: IFetchOptions): Promise<IMovie>;
+  getMovieByID(id: number): (fetchOptions: IFetchOptions) => Promise<IDocs>;
 }
 
 export type { IKinopoiskConfig, IKinopoiskService, IFetchOptions };

@@ -4,9 +4,9 @@ import kinopoiskConfig from './kinopoisk.config';
 
 async function fetcherKinopoiskAPI<T>(
   endpoint: string,
-  { signal = null, queryParams = {} }: IFetchOptions
+  { signal, queryParams }: IFetchOptions = {}
 ): Promise<T> {
-  const uriComponent: string = toURIComponent(queryParams);
+  const uriComponent: string = toURIComponent(queryParams || {});
   const input: string = `${kinopoiskConfig.getURL()}${endpoint}${uriComponent}`;
   let jsonData: T = {} as T;
 
@@ -17,7 +17,7 @@ async function fetcherKinopoiskAPI<T>(
         'X-API-KEY': import.meta.env.VITE_API_KEY,
         accept: 'application/json'
       },
-      signal
+      signal: signal || null
     });
 
     if (!response.ok) {
