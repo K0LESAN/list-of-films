@@ -38,7 +38,7 @@ const ListFilms = ({ height }: { height: number }) => {
             return (
               <Film
                 key={id}
-                id={id}
+                id={Number(id)}
                 name={name}
                 poster={poster.previewUrl!}
                 year={year}
