@@ -1,6 +1,7 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
-import List from './pages/List/List';
 import Container from './components/Container/Container';
+import MovieCard from './pages/MovieCard/MovieCard';
+import Main from './pages/Main/Main';
 
 const App = () => {
   return (
@@ -17,8 +18,12 @@ const App = () => {
             }
           />
           <Route
+            path='/:page/:id'
+            element={<MovieCard />}
+          />
+          <Route
             path='/:page'
-            element={<List />}
+            element={<Main />}
           />
         </Routes>
       </Container>
