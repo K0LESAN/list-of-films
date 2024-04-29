@@ -1,11 +1,12 @@
 import type { IDocs } from '@/types/movie.interface';
+import Film from '@/components/Film/Film';
 import { useParams } from 'react-router-dom';
+import { useRef } from 'react';
 import useFetch from '@/hooks/useFetch';
 import kinopoiskService from '@/api/kinopoisk/kinopoist.service';
-import Film from '@/components/Film/Film';
-import styles from './List.module.scss';
+import styles from './ListFilms.module.scss';
 
-const List = () => {
+const ListFilms = ({ height }: { height: number }) => {
   const page: number = Number(useParams().page);
   const [movies] = useFetch(kinopoiskService.getMovie, {
     page,
@@ -14,11 +15,18 @@ const List = () => {
     sortField: 'rating.kp',
     sortType: '-1'
   });
+  const ref = useRef<HTMLDivElement>(null);
+
+  if (ref && ref.current && ref.current.style) {
+    ref.current.style.height = `${height}px`;
+  }
 
   return (
     <>
-      <h1 className={styles.title}>Список фильмов</h1>
-      <div className={styles.wrapper}>
+      <div
+        ref={ref}
+        className={`${styles.wrapper} ${styles.height}`}
+      >
         {movies?.docs?.map(
           ({
             id,
@@ -44,4 +52,4 @@ const List = () => {
   );
 };
 
-export default List;
+export default ListFilms;
