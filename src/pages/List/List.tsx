@@ -6,7 +6,7 @@ import Film from '@/components/Film/Film';
 import styles from './List.module.scss';
 
 const List = () => {
-  const page: number = Number(useParams().id);
+  const page: number = Number(useParams().page);
   const [movies] = useFetch(kinopoiskService.getMovie, {
     page,
     selectFields: ['id', 'name', 'year', 'poster', 'rating'],

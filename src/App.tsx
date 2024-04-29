@@ -17,7 +17,7 @@ const App = () => {
             }
           />
           <Route
-            path='/:id'
+            path='/:page'
             element={<List />}
           />
         </Routes>
