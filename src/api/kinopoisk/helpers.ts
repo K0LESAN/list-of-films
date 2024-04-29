@@ -9,7 +9,7 @@ async function fetcherKinopoiskAPI<T>(
   const uriComponent: string = toURIComponent(queryParams || {});
   const input: string = `${kinopoiskConfig.getURL()}${endpoint}${uriComponent}`;
   let jsonData: T = {} as T;
-  console.log(input);
+
   try {
     const response: Response = await fetch(input, {
       method: 'GET',
