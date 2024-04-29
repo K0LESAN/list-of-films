@@ -1,0 +1,7 @@
+.wrapper {
+  @apply flex items-center gap-9 h-[37.5rem] overflow-x-scroll overflow-y-hidden;
+}
+
+.title {
+  @apply text-6xl mb-5;
+}
