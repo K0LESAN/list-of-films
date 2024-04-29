@@ -1,5 +1,5 @@
 interface IProps {
-  id;
+  id: number;
   name: string;
   poster: string;
   year: number;
