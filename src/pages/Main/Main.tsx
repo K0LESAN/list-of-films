@@ -1,4 +1,4 @@
-import styles from './List.module.scss';
+import styles from './Main.module.scss';
 import ListFilms from '@/components/ListFilms/ListFilms';
 
 const Main = () => {
