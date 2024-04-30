@@ -24,12 +24,8 @@ const MovieCard = () => {
         <Container>
           <h2 className={styles.title}>{movie.name}</h2>
           <div className={styles.wrapper}>
-            <p
-              className={
-                styles.description || 'Здесь должно быть описание фильма'
-              }
-            >
-              {movie.description}
+            <p className={styles.description}>
+              {movie.description || 'Здесь должно быть описание фильма'}
             </p>
             <img
               src={movie.poster.previewUrl}
