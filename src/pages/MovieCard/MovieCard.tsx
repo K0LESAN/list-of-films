@@ -17,7 +17,9 @@ const MovieCard = () => {
   return (
     <>
       {isLoading || !movie ? (
-        <Loader />
+        <div className={styles.loader}>
+          <Loader />
+        </div>
       ) : (
         <Container>
           <h2 className={styles.title}>{movie.name}</h2>
