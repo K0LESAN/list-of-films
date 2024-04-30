@@ -6,7 +6,7 @@ const Film = ({ id, name, poster, year, rating }: IProps) => {
   return (
     <Link
       className={styles.wrapper}
-      to={String(id)}
+      to={`/movie/${String(id)}`}
     >
       <img
         className={styles.image}

@@ -12,17 +12,17 @@ const App = () => {
             path='/'
             element={
               <Navigate
-                to='/1'
+                to='pages/1'
                 replace
               />
             }
           />
           <Route
-            path='/:page/:id'
+            path='movie/:id'
             element={<MovieCard />}
           />
           <Route
-            path='/:page'
+            path='pages/:page'
             element={<Main />}
           />
         </Routes>
