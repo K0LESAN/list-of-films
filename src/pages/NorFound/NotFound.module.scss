@@ -1,0 +1,11 @@
+.wrapper {
+  @apply flex flex-col items-center justify-center w-screen h-screen;
+}
+
+.title {
+  @apply text-3xl font-bold;
+}
+
+.image {
+  @apply max-w-lg;
+}

@@ -3,6 +3,7 @@ import styles from './MovieCard.module.scss';
 import useFetch from '@/hooks/useFetch';
 import kinopoiskService from '@/api/kinopoisk/kinopoist.service';
 import ListSimiliarFilms from '@/components/ListSimiliarFilms/ListSimiliarFilms';
+import Container from '@/components/Container/Container';
 
 const MovieCard = () => {
   const id = Number(useParams().id);
@@ -17,7 +18,7 @@ const MovieCard = () => {
   }
 
   return (
-    <>
+    <Container>
       <h2 className={styles.title}>{movie.name}</h2>
       <div className={styles.wrapper}>
         <p
@@ -33,7 +34,7 @@ const MovieCard = () => {
       </div>
       <h2 className={styles['similiar-title']}>Похожие фильмы</h2>
       <ListSimiliarFilms similiarMovies={movie.similarMovies} />
-    </>
+    </Container>
   );
 };
 
