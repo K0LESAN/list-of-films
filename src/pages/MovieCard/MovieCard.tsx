@@ -6,7 +6,7 @@ import ListSimiliarFilms from '@/components/ListSimiliarFilms/ListSimiliarFilms'
 
 const MovieCard = () => {
   const id = Number(useParams().id);
-  const [movie] = useFetch(kinopoiskService.getMovieByID(id));
+  const [movie] = useFetch(kinopoiskService.getMovieByID(id), {}, id);
 
   if (!movie) {
     return (
