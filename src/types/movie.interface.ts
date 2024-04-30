@@ -3,7 +3,7 @@ interface IDocs {
   category: string;
   name: string;
   year: number;
-  description: string;
+  description?: string;
   poster: {
     url: string;
     previewUrl: string;
@@ -14,9 +14,9 @@ interface IDocs {
     tmdb: number;
     filmCritics: number;
     russianFilmCritics: number;
-    await: number;
+    await?: number;
   };
-  similarMovies: Pick<IDocs, 'id' | 'name' | 'poster' | 'rating' | 'year'>[];
+  similarMovies: Pick<IDocs, 'id' | 'name' | 'poster' | 'rating'>[];
   createdAt: Date;
   updatedAt: Date;
 }
