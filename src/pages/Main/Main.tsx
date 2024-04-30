@@ -1,11 +1,11 @@
-import styles from './Main.module.scss';
 import ListFilms from '@/components/ListFilms/ListFilms';
+import styles from './Main.module.scss';
 
 const Main = () => {
   return (
     <>
       <h1 className={styles.title}>Список фильмов</h1>
-      <ListFilms height={600}></ListFilms>
+      <ListFilms></ListFilms>
     </>
   );
 };

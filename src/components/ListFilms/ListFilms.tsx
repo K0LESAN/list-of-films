@@ -1,33 +1,38 @@
 import type { IDocs } from '@/types/movie.interface';
 import Film from '@/components/Film/Film';
 import { useParams } from 'react-router-dom';
-import { useRef } from 'react';
 import useFetch from '@/hooks/useFetch';
 import kinopoiskService from '@/api/kinopoisk/kinopoist.service';
+import Paginator from '../Paginator/Paginator';
 import styles from './ListFilms.module.scss';
 
-const ListFilms = ({ height }: { height: number }) => {
+const ListFilms = () => {
   const page: number = Number(useParams().page);
-  const [movies] = useFetch(kinopoiskService.getMovie, {
-    page,
-    selectFields: ['id', 'name', 'year', 'poster', 'rating'],
-    notNullFields: ['id', 'name', 'year', 'poster.url', 'rating.kp'],
-    sortField: 'rating.kp',
-    sortType: '-1'
-  });
-  const ref = useRef<HTMLDivElement>(null);
+  const [movies] = useFetch(
+    kinopoiskService.getMovie,
+    {
+      page,
+      selectFields: ['id', 'name', 'year', 'poster', 'rating'],
+      notNullFields: ['id', 'name', 'year', 'poster.url', 'rating.kp'],
+      sortField: 'rating.kp',
+      sortType: '-1'
+    },
+    page
+  );
 
-  if (ref && ref.current && ref.current.style) {
-    ref.current.style.height = `${height}px`;
+  if (!movies) {
+    return (
+      <>
+        <p>No data! Reload Browser go to home page</p>
+      </>
+    );
   }
 
   return (
     <>
-      <div
-        ref={ref}
-        className={`${styles.wrapper} ${styles.height}`}
-      >
-        {movies?.docs?.map(
+      <Paginator totalPages={movies.pages} />
+      <div className={`${styles.wrapper} ${styles.height}`}>
+        {movies.docs?.map(
           ({
             id,
             name,
@@ -46,7 +51,7 @@ const ListFilms = ({ height }: { height: number }) => {
               />
             );
           }
-        )}
+        ) || <p>No data!</p>}
       </div>
     </>
   );
