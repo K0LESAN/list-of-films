@@ -18,12 +18,13 @@ const MovieCard = () => {
 
   return (
     <>
-      <h2 className={styles.title}></h2>
+      <h2 className={styles.title}>{movie.name}</h2>
       <div className={styles.wrapper}>
-        <p className={styles.description}>{String(movie)}</p>
+        <p className={styles.description}>{movie.description}</p>
         <img
           src={movie.poster.previewUrl}
           alt={movie.name}
+          className={styles.poster}
         />
       </div>
       <h2 className={styles['similiar-title']}>Похожие фильмы</h2>

@@ -1,9 +1,9 @@
 .title {
-  @apply text-3xl font-bold;
+  @apply text-3xl font-bold mb-4;
 }
 
 .wrapper {
-  @apply flex gap-5 items-center;
+  @apply flex gap-5 mb-3;
 }
 
 .description {
@@ -11,7 +11,7 @@
 }
 
 .poster {
-  @apply max-w-xl;
+  @apply max-w-[22rem];
 }
 
 .similiar-title {
