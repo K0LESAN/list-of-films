@@ -4,37 +4,42 @@ import useFetch from '@/hooks/useFetch';
 import kinopoiskService from '@/api/kinopoisk/kinopoist.service';
 import ListSimiliarFilms from '@/components/ListSimiliarFilms/ListSimiliarFilms';
 import Container from '@/components/Container/Container';
+import Loader from '@/components/Loader/Loader';
 
 const MovieCard = () => {
   const id = Number(useParams().id);
-  const [movie] = useFetch(kinopoiskService.getMovieByID(id), {}, id);
-
-  if (!movie) {
-    return (
-      <>
-        <h1>No data! Refresh browser or navigate to main page</h1>
-      </>
-    );
-  }
+  const [movie, isLoading] = useFetch(
+    kinopoiskService.getMovieByID(id),
+    {},
+    id
+  );
 
   return (
-    <Container>
-      <h2 className={styles.title}>{movie.name}</h2>
-      <div className={styles.wrapper}>
-        <p
-          className={styles.description || 'Здесь должно быть описание фильма'}
-        >
-          {movie.description}
-        </p>
-        <img
-          src={movie.poster.previewUrl}
-          alt={movie.name}
-          className={styles.poster}
-        />
-      </div>
-      <h2 className={styles['similiar-title']}>Похожие фильмы</h2>
-      <ListSimiliarFilms similiarMovies={movie.similarMovies} />
-    </Container>
+    <>
+      {isLoading || !movie ? (
+        <Loader />
+      ) : (
+        <Container>
+          <h2 className={styles.title}>{movie.name}</h2>
+          <div className={styles.wrapper}>
+            <p
+              className={
+                styles.description || 'Здесь должно быть описание фильма'
+              }
+            >
+              {movie.description}
+            </p>
+            <img
+              src={movie.poster.previewUrl}
+              alt={movie.name}
+              className={styles.poster}
+            />
+          </div>
+          <h2 className={styles['similiar-title']}>Похожие фильмы</h2>
+          <ListSimiliarFilms similiarMovies={movie.similarMovies} />
+        </Container>
+      )}
+    </>
   );
 };
 
