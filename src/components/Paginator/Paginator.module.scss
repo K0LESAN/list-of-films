@@ -3,17 +3,21 @@
 }
 
 .pageItem {
-  @apply flex items-center justify-center w-10 h-10 border-2 border-solid border-black;
+  @apply flex items-center justify-center w-10 h-10 border-2 border-solid border-black select-none;
 }
 
 .active {
   @apply bg-orange-600 border-rose-950;
 }
 
-.arrow {
-  @apply w-10 h-10 flex items-center justify-center border-2 border-solid border-black;
-}
-
 .disabled {
   @apply pointer-events-none;
+}
+
+.arrow {
+  @apply w-10 h-10 flex items-center justify-center border-2 border-solid border-black select-none;
+
+  &.disabled {
+    @apply opacity-40;
+  }
 }
