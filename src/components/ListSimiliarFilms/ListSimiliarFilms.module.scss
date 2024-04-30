@@ -1,0 +1,14 @@
+.wrapper {
+  @apply flex gap-5 overflow-x-scroll;
+}
+
+.item {
+  @apply flex flex-col flex-grow flex-shrink-0 w-60 gap-2;
+  flex-basis: auto;
+}
+
+.poster {
+}
+
+.name {
+}
