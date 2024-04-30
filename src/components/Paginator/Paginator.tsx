@@ -30,7 +30,7 @@ const Paginator = ({ totalPages }: IProps) => {
     <>
       <div className={styles.wrapper}>
         <Link
-          className={`${styles.arrow} first-letter:${page === 1 ? styles.disabled : ''}`}
+          className={`${styles.arrow} ${page === 1 ? styles.disabled : ''}`}
           to={`/pages/${String(page - 1)}`}
         >
           {'<'}
