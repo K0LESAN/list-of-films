@@ -2,20 +2,22 @@
 
 ## Install and Run the Application
 
-To install the SPA follow these steps:
+### To install the SPA follow these steps:
 
 - clone the repository
 - Go to `list-of-films` folder
 - install the dependencies with `npm install`
 - create the `.env` file and specify the api key `VITE_API_KEY` in it
 
+P.S.: Requests are handled in [kinopoisk api](https://kinopoisk.dev/)
 
-To use the SPA as dev client follow these steps:
+
+### To use the SPA as dev client follow these steps:
 
 - run dev client using `npm run dev`
 
 
-To use the SPA as product follow these steps:
+### To use the SPA as product follow these steps:
 
 - build the SPA using `npm run build`
 - run product using `npm run preview`
