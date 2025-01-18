@@ -1,4 +1,4 @@
-import type { IDocs } from '@/types/movie.interface';
+import type { Docs } from '@/types/movie.interface';
 import Film from '@/components/Film/Film';
 import { useParams } from 'react-router-dom';
 import useFetch from '@/hooks/useFetch';
@@ -36,7 +36,7 @@ const ListFilms = () => {
                 year,
                 poster,
                 rating
-              }: Pick<IDocs, 'id' | 'name' | 'year' | 'poster' | 'rating'>) => {
+              }: Pick<Docs, 'id' | 'name' | 'year' | 'poster' | 'rating'>) => {
                 return (
                   <Film
                     key={id}

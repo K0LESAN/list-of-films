@@ -1,15 +1,15 @@
-import type { IKinopoiskService } from './kinopoisk.interface';
-import type { IFetchOptions } from './kinopoisk.interface';
-import type { IMovie, IDocs } from '@/types/movie.interface';
+import type { KinopoiskService } from './kinopoisk.interface';
+import type { FetchOptions } from './kinopoisk.interface';
+import type { Movie, Docs } from '@/types/movie.interface';
 import { fetcherKinopoiskAPI } from './helpers';
 
-const kinopoiskService: IKinopoiskService = {
-  async getMovie(fetchOptions: IFetchOptions): Promise<IMovie> {
-    return fetcherKinopoiskAPI<IMovie>('movie?', fetchOptions);
+const kinopoiskService: KinopoiskService = {
+  async getMovie(fetchOptions: FetchOptions): Promise<Movie> {
+    return fetcherKinopoiskAPI<Movie>('movie?', fetchOptions);
   },
-  getMovieByID(id: number): (fetchOptions: IFetchOptions) => Promise<IDocs> {
-    return async (fetchOptions: IFetchOptions = {}): Promise<IDocs> => {
-      return fetcherKinopoiskAPI<IDocs>(`movie/${id}`, fetchOptions);
+  getMovieByID(id: number): (fetchOptions: FetchOptions) => Promise<Docs> {
+    return async (fetchOptions: FetchOptions = {}): Promise<Docs> => {
+      return fetcherKinopoiskAPI<Docs>(`movie/${id}`, fetchOptions);
     };
   }
 };

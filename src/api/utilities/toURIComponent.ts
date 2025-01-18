@@ -1,6 +1,6 @@
-import type { IQueryParams } from '@/types/api.interface';
+import type { QueryParams } from '@/types/api.interface';
 
-export default function toURIComponent<T extends IQueryParams>(
+export default function toURIComponent<T extends QueryParams>(
   params: T
 ): string {
   const uri: string[] = [];

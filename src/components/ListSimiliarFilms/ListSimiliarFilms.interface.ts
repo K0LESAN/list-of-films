@@ -1,7 +1,7 @@
-import { IDocs } from '@/types/movie.interface';
+import { Docs } from '@/types/movie.interface';
 
-interface IProps {
-  similiarMovies: IDocs['similarMovies'] | null | undefined;
+interface Props {
+  similiarMovies: Docs['similarMovies'] | null | undefined;
 }
 
-export type { IProps };
+export type { Props };

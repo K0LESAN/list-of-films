@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-import type { IProps } from './ListSimiliarFilms.interface';
+import type { Props } from './ListSimiliarFilms.interface';
 import styles from './ListSimiliarFilms.module.scss';
 
-const ListSimiliarFilms = ({ similiarMovies }: IProps) => {
+const ListSimiliarFilms = ({ similiarMovies }: Props) => {
   if (!similiarMovies?.length) {
     return (
       <>

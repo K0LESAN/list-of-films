@@ -1,6 +1,6 @@
-import type { IKinopoiskConfig } from './kinopoisk.interface';
+import type { KinopoiskConfig } from './kinopoisk.interface';
 
-const kinopoiskConfig: IKinopoiskConfig = {
+const kinopoiskConfig: KinopoiskConfig = {
   protocol: 'https://',
   url: 'api.kinopoisk.dev/',
   version: 'v1.4/',

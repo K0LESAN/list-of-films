@@ -1,4 +1,4 @@
-interface IDocs {
+interface Docs {
   id: string;
   category: string;
   name: string;
@@ -16,17 +16,17 @@ interface IDocs {
     russianFilmCritics: number;
     await?: number;
   };
-  similarMovies: Pick<IDocs, 'id' | 'name' | 'poster' | 'rating'>[];
+  similarMovies: Pick<Docs, 'id' | 'name' | 'poster' | 'rating'>[];
   createdAt: Date;
   updatedAt: Date;
 }
 
-interface IMovie {
-  docs: IDocs[];
+interface Movie {
+  docs: Docs[];
   total: number;
   limit: number;
   page: number;
   pages: number;
 }
 
-export type { IMovie, IDocs };
+export type { Movie, Docs };

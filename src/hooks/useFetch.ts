@@ -1,9 +1,9 @@
-import { IFetchOptions, IQueryParams } from '@/types/api.interface';
+import { FetchOptions, QueryParams } from '@/types/api.interface';
 import { useEffect, useState } from 'react';
 
 function useFetch<T>(
-  fetcher: ((fetchOptions: IFetchOptions) => Promise<T>) | string,
-  queryParams: IQueryParams = {},
+  fetcher: ((fetchOptions: FetchOptions) => Promise<T>) | string,
+  queryParams: QueryParams = {},
   ...depedencies: unknown[]
 ): [T | undefined, boolean] {
   const [data, setData] = useState<T>();

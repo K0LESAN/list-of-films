@@ -1,10 +1,10 @@
-import type { IFetchOptions } from './kinopoisk.interface';
+import type { FetchOptions } from './kinopoisk.interface';
 import toURIComponent from '../utilities/toURIComponent';
 import kinopoiskConfig from './kinopoisk.config';
 
 async function fetcherKinopoiskAPI<T>(
   endpoint: string,
-  { signal, queryParams }: IFetchOptions = {}
+  { signal, queryParams }: FetchOptions = {}
 ): Promise<T> {
   const uriComponent: string = toURIComponent(queryParams || {});
   const input: string = `${kinopoiskConfig.getURL()}${endpoint}${uriComponent}`;

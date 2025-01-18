@@ -1,16 +1,16 @@
-import type { IFetchOptions } from '@/types/api.interface';
-import type { IDocs, IMovie } from '@/types/movie.interface';
+import type { FetchOptions } from '@/types/api.interface';
+import type { Docs, Movie } from '@/types/movie.interface';
 
-interface IKinopoiskConfig {
+interface KinopoiskConfig {
   protocol: string;
   url: string;
   version: string;
   getURL(): string;
 }
 
-interface IKinopoiskService {
-  getMovie(fetchOptions: IFetchOptions): Promise<IMovie>;
-  getMovieByID(id: number): (fetchOptions: IFetchOptions) => Promise<IDocs>;
+interface KinopoiskService {
+  getMovie(fetchOptions: FetchOptions): Promise<Movie>;
+  getMovieByID(id: number): (fetchOptions: FetchOptions) => Promise<Docs>;
 }
 
-export type { IKinopoiskConfig, IKinopoiskService, IFetchOptions };
+export type { KinopoiskConfig, KinopoiskService, FetchOptions };

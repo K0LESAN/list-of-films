@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-import type { IProps } from './Film.interface';
+import type { Props } from './Film.interface';
 import styles from './Film.module.scss';
 
-const Film = ({ id, name, poster, year, rating }: IProps) => {
+const Film = ({ id, name, poster, year, rating }: Props) => {
   return (
     <Link
       className={styles.wrapper}

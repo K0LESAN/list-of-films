@@ -1,4 +1,4 @@
-interface IProps {
+interface Props {
   id: number;
   name: string;
   poster: string;
@@ -6,4 +6,4 @@ interface IProps {
   rating: number;
 }
 
-export type { IProps };
+export type { Props };

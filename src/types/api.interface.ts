@@ -1,8 +1,8 @@
-interface IQueryParams {
+interface QueryParams {
   [key: string]: string | number | boolean | string[] | number[] | boolean[];
 }
 
-interface IQueryRequestMovie extends IQueryParams {
+interface QueryRequestMovie extends QueryParams {
   id: string[] | string;
   limit: number;
   page: number;
@@ -14,9 +14,9 @@ interface IQueryRequestMovie extends IQueryParams {
   year: number;
 }
 
-interface IFetchOptions {
+interface FetchOptions {
   signal?: AbortSignal | null;
-  queryParams?: IQueryParams;
+  queryParams?: QueryParams;
 }
 
-export type { IQueryParams, IFetchOptions, IQueryRequestMovie };
+export type { QueryParams, FetchOptions, QueryRequestMovie };

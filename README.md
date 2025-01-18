@@ -11,11 +11,9 @@
 
 P.S.: Requests are handled in [kinopoisk api](https://kinopoisk.dev/)
 
-
 ### To use the SPA as dev client follow these steps:
 
 - run dev client using `npm run dev`
-
 
 ### To use the SPA as product follow these steps:
 

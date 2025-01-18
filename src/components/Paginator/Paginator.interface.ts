@@ -1,5 +1,5 @@
-interface IProps {
+interface Props {
   totalPages: number;
 }
 
-export type { IProps };
+export type { Props };

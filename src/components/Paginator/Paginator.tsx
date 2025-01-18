@@ -1,8 +1,8 @@
 import { Link, NavLink, useParams } from 'react-router-dom';
-import { IProps } from './Paginator.interface';
+import { Props } from './Paginator.interface';
 import styles from './Paginator.module.scss';
 
-const Paginator = ({ totalPages }: IProps) => {
+const Paginator = ({ totalPages }: Props) => {
   function setClassToNavLink({ isActive }: { isActive: boolean }): string {
     return `${isActive ? `${styles.disabled} ${styles.active}` : ''} ${styles.pageItem}`;
   }
