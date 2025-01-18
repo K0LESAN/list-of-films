@@ -1,6 +1,6 @@
-import ListFilms from '@/components/ListFilms/ListFilms';
-import Container from '@/components/Container/Container';
-import styles from './Main.module.scss';
+import ListFilms from '@/components/list-films';
+import Container from '@/components/container';
+import styles from './index.module.scss';
 
 const Main = () => {
   return (

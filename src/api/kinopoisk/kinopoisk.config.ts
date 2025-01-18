@@ -1,6 +1,6 @@
 import type { KinopoiskConfig } from './kinopoisk.interface';
 
-const kinopoiskConfig: KinopoiskConfig = {
+export const kinopoiskConfig: KinopoiskConfig = {
   protocol: 'https://',
   url: 'api.kinopoisk.dev/',
   version: 'v1.4/',
@@ -8,5 +8,3 @@ const kinopoiskConfig: KinopoiskConfig = {
     return `${this.protocol}${this.url}${this.version}`;
   }
 };
-
-export default kinopoiskConfig;

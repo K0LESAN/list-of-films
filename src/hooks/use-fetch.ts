@@ -1,7 +1,7 @@
-import { FetchOptions, QueryParams } from '@/types/api.interface';
+import type { FetchOptions, QueryParams } from '@/types/api.interface';
 import { useEffect, useState } from 'react';
 
-function useFetch<T>(
+export function useFetch<T>(
   fetcher: ((fetchOptions: FetchOptions) => Promise<T>) | string,
   queryParams: QueryParams = {},
   ...depedencies: unknown[]
@@ -46,5 +46,3 @@ function useFetch<T>(
 
   return [data, isLoading];
 }
-
-export default useFetch;

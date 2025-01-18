@@ -3,7 +3,7 @@ import type { FetchOptions } from './kinopoisk.interface';
 import type { Movie, Docs } from '@/types/movie.interface';
 import { fetcherKinopoiskAPI } from './helpers';
 
-const kinopoiskService: KinopoiskService = {
+export const kinopoiskService: KinopoiskService = {
   async getMovie(fetchOptions: FetchOptions): Promise<Movie> {
     return fetcherKinopoiskAPI<Movie>('movie?', fetchOptions);
   },
@@ -13,5 +13,3 @@ const kinopoiskService: KinopoiskService = {
     };
   }
 };
-
-export default kinopoiskService;

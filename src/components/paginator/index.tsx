@@ -1,16 +1,19 @@
 import { Link, NavLink, useParams } from 'react-router-dom';
-import { Props } from './Paginator.interface';
-import styles from './Paginator.module.scss';
+import type { ReactNode } from 'react';
+import type { Props } from './index.interface';
+import styles from './index.module.scss';
 
 const Paginator = ({ totalPages }: Props) => {
   function setClassToNavLink({ isActive }: { isActive: boolean }): string {
     return `${isActive ? `${styles.disabled} ${styles.active}` : ''} ${styles.pageItem}`;
   }
 
-  const pageItems = [];
+  const pageItems: ReactNode[] = [];
   const page: number = Number(useParams().page);
   const start: number = Math.max(1, page - 5);
-  const end: number = Math.max(Math.min(totalPages, page + 5), 11);
+  const end: number = totalPages
+    ? Math.max(Math.min(totalPages || 0, page + 5), 11)
+    : 0;
 
   for (let index: number = start; index <= end; index++) {
     const path: string = `/pages/${String(index)}`;
@@ -27,23 +30,21 @@ const Paginator = ({ totalPages }: Props) => {
   }
 
   return (
-    <>
-      <div className={styles.wrapper}>
-        <Link
-          className={`${styles.arrow} ${page === 1 ? styles.disabled : ''}`}
-          to={`/pages/${String(page - 1)}`}
-        >
-          {'<'}
-        </Link>
-        {pageItems}
-        <Link
-          className={`${styles.arrow} ${page === totalPages ? styles.disabled : ''}`}
-          to={`/pages/${String(page + 1)}`}
-        >
-          {'>'}
-        </Link>
-      </div>
-    </>
+    <div className={styles.wrapper}>
+      <Link
+        className={`${styles.arrow} ${!totalPages || page <= 1 ? styles.disabled : ''}`}
+        to={`/pages/${String(page - 1)}`}
+      >
+        {'<'}
+      </Link>
+      {pageItems}
+      <Link
+        className={`${styles.arrow} ${!totalPages || page >= totalPages ? styles.disabled : ''}`}
+        to={`/pages/${String(page + 1)}`}
+      >
+        {'>'}
+      </Link>
+    </div>
   );
 };
 

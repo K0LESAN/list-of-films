@@ -1,14 +1,10 @@
 import { Link } from 'react-router-dom';
-import type { Props } from './ListSimiliarFilms.interface';
-import styles from './ListSimiliarFilms.module.scss';
+import type { Props } from './index.interface';
+import styles from './index.module.scss';
 
 const ListSimiliarFilms = ({ similiarMovies }: Props) => {
   if (!similiarMovies?.length) {
-    return (
-      <>
-        <p>No data!</p>
-      </>
-    );
+    return <p>No data!</p>;
   }
 
   return (

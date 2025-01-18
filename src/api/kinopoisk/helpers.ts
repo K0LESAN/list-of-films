@@ -1,8 +1,8 @@
 import type { FetchOptions } from './kinopoisk.interface';
-import toURIComponent from '../utilities/toURIComponent';
-import kinopoiskConfig from './kinopoisk.config';
+import { toURIComponent } from '../utilities/to-uri-component';
+import { kinopoiskConfig } from './kinopoisk.config';
 
-async function fetcherKinopoiskAPI<T>(
+export async function fetcherKinopoiskAPI<T>(
   endpoint: string,
   { signal, queryParams }: FetchOptions = {}
 ): Promise<T> {
@@ -31,5 +31,3 @@ async function fetcherKinopoiskAPI<T>(
 
   return jsonData;
 }
-
-export { fetcherKinopoiskAPI };
