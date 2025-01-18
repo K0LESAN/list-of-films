@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import type { Props } from './Film.interface';
+import type { Props } from './index.interface';
 import styles from './index.module.scss';
 
 const Film = ({ id, name, poster, year, rating }: Props) => {
