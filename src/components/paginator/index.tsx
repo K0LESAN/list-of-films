@@ -1,15 +1,14 @@
-import { Link, NavLink, useParams } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import type { ReactNode } from 'react';
 import type { Props } from './index.interface';
 import styles from './index.module.scss';
 
-const Paginator = ({ totalPages }: Props) => {
+const Paginator = ({ totalPages, page }: Props) => {
   function setClassToNavLink({ isActive }: { isActive: boolean }): string {
     return `${isActive ? `${styles.disabled} ${styles.active}` : ''} ${styles.pageItem}`;
   }
 
   const pageItems: ReactNode[] = [];
-  const page: number = Number(useParams().page);
   const start: number = Math.max(1, page - 5);
   const end: number = totalPages
     ? Math.max(Math.min(totalPages || 0, page + 5), 11)

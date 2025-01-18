@@ -20,6 +20,15 @@ const App = () => {
         element={<MovieCard />}
       />
       <Route
+        path='/pages'
+        element={
+          <Navigate
+            to='/pages/1'
+            replace
+          />
+        }
+      />
+      <Route
         path='/pages/:page'
         element={<Main />}
       />

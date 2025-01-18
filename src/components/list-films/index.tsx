@@ -27,7 +27,10 @@ const ListFilms = () => {
 
   return (
     <>
-      <Paginator totalPages={movies.pages} />
+      <Paginator
+        totalPages={movies.pages}
+        page={page}
+      />
       <div className={`${styles.wrapper} ${styles.height}`}>
         {movies.docs?.length > 0 ? (
           movies.docs?.map(
